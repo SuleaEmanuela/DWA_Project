@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Dancing+Script" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="OrderStyle.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="Validation.js"></script>
+    <script type="text/javascript" src="SubmitOrder.js"></script>
+    <script type="text/javascript" src="CheckBoxSwitch.js"></script>
+    <title>Order</title>
+</head>
+<body>
+    <div class="bg-image">
+        <h1 class="font-weight-bold" id="head">Order</h1>
+        <a href="Home.html">
+            <div id="home-button">
+                <img id="home-img" src="images/home.png" />
+            </div>
+        </a>
+        <nav>
+            <img style="border-bottom-left-radius: 30px; border-top-left-radius: 30px; height: 40%; width: 115%" src="images/clip.gif" />
+        </nav>
+        <article>
+            <div id="forms">
+                <form id="orderForm">
+                    <section class="section">
+                        <div class="form-group">
+                            <label for="inputName">Name*</label>
+                            <input type="text" class="form-control" id="inputName" name="name" placeholder="Name">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress">Address*</label>
+                                <input type="text" class="form-control" id="inputAddress" name="address" placeholder="Number, Street, Apartment No">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">City*</label>
+                                <input type="text" class="form-control" id="inputCity" name="city" placeholder="Brasov">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputPhone">Phone number*</label>
+                                <input type="text" class="form-control" id="inputPhone" name="phone" placeholder="Phone">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail">Email*</label>
+                                <input type="email" class="form-control" id="inputEmail" name="email" placeholder="email">
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-row">
+                            <div class="form-group col-md-5" id="order-text">
+                                <input type="checkbox" onclick="Switch()" id="orderCheckCapricciosa"> Capricciosa
+                            </div>
+                            <div class="form-group col-md-5">
+                                <img id="order-image" src="images/Capricciosa.png" />
+                            </div>
+                            <div class="form-group col-md-2" id="capricciosaInputQuantity" style="display:none;">
+                                <label for="inputCapricciosaQuantity">Quantity</label>
+                                <input type="number" class="form-control" id="inputCapricciosaQuantity" placeholder="1">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-5" id="order-text">
+                                <input type="checkbox" onclick="Switch()" id="orderCheckHawaiian"> Hawaiian
+                            </div>
+                            <div class="form-group col-md-5">
+                                <img id="order-image" src="images/Hawaian.png" />
+                            </div>
+                            <div class="form-group col-md-2" id="hawaiianInputQuantity" style="display:none;">
+                                <label for="inputHawaiianQuantity">Quantity</label>
+                                <input type="number" class="form-control" id="inputHawaiianQuantity" placeholder="1">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-5" id="order-text">
+                                <input type="checkbox" onclick="Switch()" id="orderCheckMargerita"> Margerita
+                            </div>
+                            <div class="form-group col-md-5">
+                                <img id="order-image" src="images/Margerita.png" />
+                            </div>
+                            <div class="form-group col-md-2" id="margeritaInputQuantity" style="display:none;">
+                                <label for="inputMargeritaQuantity">Quantity</label>
+                                <input type="number" class="form-control" id="inputMargeritaQuantity" placeholder="1">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-5" id="order-text">
+                                <input type="checkbox" onclick="Switch()" id="orderCheckMexicana"> Mexicana
+                            </div>
+                            <div class="form-group col-md-5">
+                                <img id="order-image" src="images/Mexicana.png" />
+                            </div>
+                            <div class="form-group col-md-2" id="mexicanaInputQuantity" style="display:none;">
+                                <label for="inputMexicanaQuantity">Quantity</label>
+                                <input type="number" class="form-control" id="inputMexicanaQuantity" placeholder="1">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-5" id="order-text">
+                                <input type="checkbox" onclick="Switch()" id="orderCheckPepperoni"> Pepperoni
+                            </div>
+                            <div class="form-group col-md-5">
+                                <img id="order-image" src="images/Pepperoni.png" />
+                            </div>
+                            <div class="form-group col-md-2" id="pepperoniInputQuantity" style="display:none;">
+                                <label for="inputPepperoniQuantity">Quantity</label>
+                                <input type="number" class="form-control" id="inputPepperoniQuantity" placeholder="1">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-5" id="order-text">
+                                <input type="checkbox" onclick="Switch()" id="orderCheckMushroom"> Mushroom
+                            </div>
+                            <div class="form-group col-md-5">
+                                <img id="order-image" src="images/Mushroom.png" />
+                            </div>
+                            <div class="form-group col-md-2" id="mushroomInputQuantity" style="display:none;">
+                                <label for="inputMushroomQuantity">Quantity</label>
+                                <input type="number" class="form-control" id="inputMushroomQuantity" placeholder="1">
+                            </div>
+                        </div>
+                    </section>
+                    <br />
+                    <section class="section">
+                        <label for="CommentsSection" id="order-text">Comments</label>
+                        <textarea class="form-control" id="CommentsSection" rows="4"></textarea>
+                    </section>
+                    <br />
+                    <br />
+                    <button type="submit" id="submitButton" onclick="SubmitAlert()" style="width:80%; margin-left:auto;margin-right:auto;" class="btn btn-success btn-lg btn-block" disabled>Place order</button>
+                </form>
+            </div>
+        </article>
+    </div>
+</body>
+</html>
